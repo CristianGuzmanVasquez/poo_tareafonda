@@ -19,21 +19,25 @@ public class Main {
         gestor.registrar(chichaSinAlcohol);
         gestor.registrar(moteConHuesillo);
 
+        System.out.println(" ");
+        System.out.println("=== BUSQUEDA POR NOMBRE: Chicha ===" );
+        List<Bebida> resultado = gestor.buscarPorNombre("Chicha");
+        for(Bebida bebida : resultado){
+            System.out.println(bebida.obtenerDetalle());
+        }
+
+        System.out.println(" ");
+        System.out.println("=== VENTAS ===");
         gestor.vender("Pisco Sour", 2);
         gestor.vender("Pisco Sour", 5);
         gestor.vender("Chicha", 1);
         gestor.vender("Mote con Huesillo", 6);
 
-        List<Bebida> resultado = gestor.buscarPorNombre("Chicha");
-
-        for(Bebida bebida : resultado){
-            System.out.println(bebida.toString());
-        }
-
+        System.out.println(" ");
+        System.out.println(" === LISTADO DE BEBIDAS ===");
         List<Bebida> todas = gestor.obtenerTodas();
-
         for (Bebida bebida : todas){
-            System.out.println(bebida.obtenerDetalle());
+            System.out.println(bebida.toString());
         }
 
     }
